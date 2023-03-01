@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { CyclesContext } from '../../contexts/CyclesContext'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
@@ -12,8 +14,6 @@ import {
   StartCountdownContainer,
   StopCountdownContainer,
 } from './styles'
-import { useContext } from 'react'
-import { CyclesContext } from '../../contexts/CyclesContext'
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(5, 'Name your project'),
